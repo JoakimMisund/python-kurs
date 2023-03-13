@@ -1,0 +1,8 @@
+root has home directory /root
+bin has home directory /bin
+daemon has home directory /sbin
+sshd has home directory /var/empty/sshd
+tcpdump has home directory /
+mandar has home directory /home/mandar
+mysql has home directory /var/lib/mysql
+nagios has home directory /home/nagios

@@ -1,0 +1,80 @@
+# Pythonkurs README
+Vi har tidligere kjørt to 2,5-dagers kurs (er derfor vi har en Del 1 og Del 2), men er lite trolig at vi kommer gjennom alt dette
+på en 2,5-dagers økt. De viktigste grunnleggende tingene for å raskt komme i gang med å programmere Python skal iallefall være i Del 1.
+
+Jeg kommer uansett til å gi ut Del 2-emnene til alle på slutten av kurset, selv om vi
+ikke har gått gjennom det. Slik at man har noe å kikke på til senere hvis dere lurer på noen python-ting.
+For de som er veldig raske med oppgaver, kan godt Del 2-emnene begynnes på selv om planen ikke er å gå gjennom dette.
+
+Presentasjonene som skal gås gjennom blir gitt ut underveis i kurset
+
+Presentasjoner ligger i presentasjoner/
+- Disse presentasjonene er "notebooks" for Jupyter lab som skal brukes i kurset.
+- Kan også se presentasjonene i html-form (I disse kan ikke kodesnippets kjøres) i presentasjoner/html hvis man ikke vil se de i Jupyter
+- Oppgaver finner man underveis i presentasjonene/
+
+Løsningsforslag ligger i løsningsforslag/
+- Det vil bli gitt ut løsningsforslag underveis i kurset.
+- Noen oppgaver er løst i notebooks og andre som script
+
+Nyttige script som blir brukt underveis i scriptet ligger i mappa script/
+
+Det finnes ekstraoppgaver under ekstraoppgaver/ 
+
+Start med å lese "01 - Introduksjon". Der står det også hva man skal starte med (litt mer detaljert), men for å komme i gang:
+
+Last ned Python 3.11 fra https://www.python.org/downloads/ 
+
+På Linux:
+Python er som regel forhånds installert på Linux. En bestemt versjon av Python installeres slik 
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update 
+sudo apt install python3.11
+
+Python kan også installeres med pakkemanageren "sudo apt install python3 python3-pip". Da får du som regel en litt eldre versjon, feks. 3.10 eller 3.9, men disse kan også brukes fint)
+
+På Windows:
+- Åpne CMD og skriv "python --version". Verifiser at den sier "Python 3.11.x .. " etc. Dette vil kun fungere hvis python er lagt til i Windows sin miljøvariabel %PATH%
+- Hvis dette ikke fungerer kan Py launcher brukes: "py --version" eller "py -3 --version" (for å spesifisere versjon). Py launcher er den foretrukkede måten å kjøre python på i Windows. 
+(Siden man slipper å bli forvirret hvis man har flere pythonversjoner i flere mapper som alle ligger i PATH. Da kan man fort kjøre en annen versjon av python enn det 
+man trodde man startet)
+- Hver gang man ser "python" i presentasjonene og oppgavene kan dette byttes ut med "py" eller "py -3" på Windows for å bruke py launcher istedenfor.
+
+På Linux:
+- Åpne terminalen og skriv "python3 --version" (evt. kan det hende din distro har kalt versjon 3 av python for "python")
+- Verifiser at den sier "Python 3.11.x .. " etc.
+
+For å bruke Jupyter lab og åpne notebookene (.ipynb-filene):
+- Installer pakker evt. spesifiser de direkte
+  - pip3 install -r requirements.txt
+evt:
+  - pip3 install Flask jupyterlab requests fastapi uvicorn
+
+Hvis pip ikke funker (på Windows) bytt ut pip med "py -3 -m pip":
+- py -3 -m pip install -r requirements.txt
+
+Vi har tidligere brukt virtuelle miljøer i kurset (for å installere pakker osv.), men for å unngå å skape forvirring så går vi ikke gjennom dette.
+Dere kan helt fint bruke dette selv, hvis det er noe dere pleier.
+
+##### Installer og kjør Jupyterlab
+Jupyter lab / notebook er et GUI i nettleseren man kan bruke for å kjøre Pythonkode mer interaktivt enn i et script.
+Her kan man kjøre snippets med kode og få resultater tilbake.
+Vi kommer til å bruke dette i kurset, og alle presentasjoner er notebooks!
+```bash
+pip install jupyterlab (Hvis ikke allerede installert i forrige steg)
+jupyter serverextension enable --py jupyterlab --sys-prefix
+jupyter lab
+```
+Hvis dette ikke fungerer, bytt ut "jupyter" med `python3 -m jupyter`
+```bash
+python3 -m jupyter serverextension enable --py jupyterlab --sys-prefix
+python3 -m jupyter lab
+```
+evt. med py launcher for Windows:
+```bash
+py -3 -m jupyter serverextension enable --py jupyterlab --sys-prefix
+py -3 -m jupyter lab
+```
+
+Du skal nå få opp et nytt vindu i nettleseren din. Her kan man se presentasjoner osv.
+
