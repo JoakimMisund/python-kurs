@@ -23,15 +23,15 @@ Det finnes ekstraoppgaver under ekstraoppgaver/
 
 Start med å lese "01 - Introduksjon". Der står det også hva man skal starte med (litt mer detaljert), men for å komme i gang:
 
-Last ned Python 3.11 fra https://www.python.org/downloads/ 
+Last ned Python 3.12 fra https://www.python.org/downloads/ 
 
 På Linux:
 Python er som regel forhånds installert på Linux. En bestemt versjon av Python installeres slik 
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update 
-sudo apt install python3.11
+sudo apt install python3.12
 
-Python kan også installeres med pakkemanageren "sudo apt install python3 python3-pip". Da får du som regel en litt eldre versjon, feks. 3.10 eller 3.9, men disse kan også brukes fint)
+Python kan også installeres med pakkemanageren "sudo apt install python3 python3-pip". Da får du som regel en litt eldre versjon, feks. 3.11,3.10 eller 3.9, men disse kan også brukes fint)
 
 På Windows:
 - Åpne CMD og skriv "python --version". Verifiser at den sier "Python 3.11.x .. " etc. Dette vil kun fungere hvis python er lagt til i Windows sin miljøvariabel %PATH%
@@ -42,7 +42,7 @@ man trodde man startet)
 
 På Linux:
 - Åpne terminalen og skriv "python3 --version" (evt. kan det hende din distro har kalt versjon 3 av python for "python")
-- Verifiser at den sier "Python 3.11.x .. " etc.
+- Verifiser at den sier "Python 3.12.x .. " etc.
 
 For å bruke Jupyter lab og åpne notebookene (.ipynb-filene):
 - Installer pakker evt. spesifiser de direkte
