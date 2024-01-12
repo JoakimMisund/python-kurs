@@ -24,6 +24,7 @@ Det finnes ekstraoppgaver under ekstraoppgaver/
 Start med å lese "01 - Introduksjon". Der står det også hva man skal starte med (litt mer detaljert), men for å komme i gang:
 
 Last ned Python 3.12 fra https://www.python.org/downloads/ 
+Har du allerede python i litt eldre versjon (3.11,3.10,3.9) vil det også fungere fint. 
 
 På Linux:
 Python er som regel forhånds installert på Linux. En bestemt versjon av Python installeres slik 
@@ -34,7 +35,7 @@ sudo apt install python3.12
 Python kan også installeres med pakkemanageren "sudo apt install python3 python3-pip". Da får du som regel en litt eldre versjon, feks. 3.11,3.10 eller 3.9, men disse kan også brukes fint)
 
 På Windows:
-- Åpne CMD og skriv "python --version". Verifiser at den sier "Python 3.11.x .. " etc. Dette vil kun fungere hvis python er lagt til i Windows sin miljøvariabel %PATH%
+- Åpne CMD og skriv "python --version". Verifiser at den sier "Python 3.12.x .. " etc. Dette vil kun fungere hvis python er lagt til i Windows sin miljøvariabel %PATH%
 - Hvis dette ikke fungerer kan Py launcher brukes: "py --version" eller "py -3 --version" (for å spesifisere versjon). Py launcher er den foretrukkede måten å kjøre python på i Windows. 
 (Siden man slipper å bli forvirret hvis man har flere pythonversjoner i flere mapper som alle ligger i PATH. Da kan man fort kjøre en annen versjon av python enn det 
 man trodde man startet)
