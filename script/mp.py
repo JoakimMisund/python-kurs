@@ -1,6 +1,7 @@
 import multiprocessing
 import time
 
+
 def process_stuff(name, start, stop):
     print(f"{name} started!")
     a = 0
@@ -8,6 +9,7 @@ def process_stuff(name, start, stop):
         a += i**i
     print(f"{name} stopped!")
     return a
+
 
 if __name__ == '__main__':
     processes = []
@@ -19,7 +21,10 @@ if __name__ == '__main__':
     s = time.time()
     for i in range(num_procs):
         p = multiprocessing.Process(
-            target=process_stuff, args=(f"Proc-{i}", calc_start + chunk_size*i, calc_start + chunk_size*(i+1))
+            target=process_stuff,
+            args=(f"Proc-{i}",
+                  calc_start + chunk_size*i,
+                  calc_start + chunk_size*(i+1))
         )
         p.start()
         processes.append(p)
