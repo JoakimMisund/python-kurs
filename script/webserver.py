@@ -3,6 +3,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
     return "It is working!"
@@ -23,6 +24,7 @@ def spider():
 </html>
     """
 
+
 @app.route("/spider1")
 def spider1():
     return """<!DOCTYPE html>
@@ -33,6 +35,7 @@ def spider1():
 </body>
 </html>
     """
+
 
 @app.route("/spider2")
 def spider2():

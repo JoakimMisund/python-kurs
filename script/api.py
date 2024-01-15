@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Form
+from fastapi import FastAPI
 
 app = FastAPI()
 
@@ -11,10 +11,11 @@ async def read_file():
 
     return {"message": x}
 
+
 @app.put("/")
 async def write_file(text: str | None = None):
     f = open('../presentasjoner/files/text.txt', 'a')
-    f.write("\n"+text)
+    f.write("\n" + text)
     f.close()
 
-    return {"message": text + " written to file"}   
+    return {"message": text + " written to file"}

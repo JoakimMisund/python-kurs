@@ -3,8 +3,8 @@ class TargetHost:
     hostname = "Unknown"
     os = "Unknown"
     open_ports = []
-    
+
     def info(self):
         print("Hostname: {verdi}".format(verdi=self.hostname))
         print("OS:", self.os)
-        print("Open ports: %s" %", ".join(self.open_ports))
+        print("Open ports: %s" % ", ".join(self.open_ports))
