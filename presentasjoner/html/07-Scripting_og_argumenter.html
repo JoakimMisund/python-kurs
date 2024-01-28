@@ -7785,89 +7785,8 @@ Summen<span class="w"> </span>er:<span class="w"> </span><span class="m">6</span
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Skal man ha litt mer avanserte flagg/opsjoner eller argumenter brukes gjerne moduler for dette.</li>
-<li>De mest vanlige er <strong>getopt</strong> og <strong>argparse</strong></li>
+<li>Det er flere moduler for dette, i dette kurset bruker vi <strong>argparse</strong> og <strong>typer</strong></li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Getopt">Getopt<a class="anchor-link" href="#Getopt">¶</a></h3><ul>
-<li>"Gammeldags" argumentparser.</li>
-<li>importeres med <code>import getopt</code>.</li>
-<li>Får inn en liste over argumenter.</li>
-<li>Man spesifiserer hvilke opsjoner som skal brukes, samt hvilke opsjoner som krever et parameter.<ul>
-<li>Brukes slik: <code>getopt.getopt(&lt;argumentliste&gt;, &lt;filter for korte opsjoner&gt;, &lt;filter for lange opsjoner&gt;)</code></li>
-<li>opsjon -v spesifiseres med filteret <code>'v'</code>.</li>
-<li>Opsjon -f (som krever parameter) spesifiseres med <code>'f:'</code> (med kolon etter)</li>
-<li>Hvis det er flere opsjoner legges de bare etter hverandre i en streng: <code>'vf:'</code></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">getopt</span>
-
-<span class="n">arguments</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'-v'</span><span class="p">,</span> <span class="s1">'-f'</span><span class="p">,</span> <span class="s1">'fil.txt'</span><span class="p">,</span> <span class="s1">'-a'</span><span class="p">,</span> <span class="s2">"asd"</span><span class="p">]</span> <span class="c1"># arguments er normalt bare sys.argv</span>
-<span class="n">getopt</span><span class="o">.</span><span class="n">getopt</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="s1">'vf:a'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Argumenter lagret i en tupel med opsjoner i indeks 0 og resterende argumenter i indeks 1</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Getopt støtter både lange og korte flagg/opsjoner. Filteret for lange opsjoner er en liste (med <code>=</code> etter istedenfor <code>:</code> ved parametre)</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">getopt</span>
-
-<span class="n">arguments</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'-v'</span><span class="p">,</span> <span class="s1">'--file'</span><span class="p">,</span> <span class="s1">'fil.txt'</span><span class="p">]</span>
-<span class="n">opts</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">getopt</span><span class="o">.</span><span class="n">getopt</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="s1">'vf:'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'file='</span><span class="p">])</span>
-
-<span class="k">for</span> <span class="n">opt</span><span class="p">,</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">opts</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">opt</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -7940,7 +7859,77 @@ Summen<span class="w"> </span>er:<span class="w"> </span><span class="m">6</span
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.4-Oppgaver:-Bruk-argparse-eller-getopt">7.4 Oppgaver: Bruk argparse eller getopt<a class="anchor-link" href="#7.4-Oppgaver:-Bruk-argparse-eller-getopt">¶</a></h2>
+<h3 id="Typer">Typer<a class="anchor-link" href="#Typer">¶</a></h3><ul>
+<li>Typer er en tredjeparts modul som kan tolke kommandolinjen.</li>
+<li>Bygger automatisk opp hjelpetekst</li>
+<li>Støtter standardverdier for argumenter</li>
+<li>Støtter obligatoriske argumenter</li>
+<li>Mye funksjonalitet</li>
+</ul>
+<p>Godt dokumentert på <a href="https://typer.tiangolo.com/">https://typer.tiangolo.com/</a></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">typer</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span>
+            <span class="n">host</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Adresse til webserver"</span><span class="p">),</span>
+            <span class="n">lang</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">"no"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Hvilket språk ønsker du?"</span><span class="p">)</span>
+        <span class="p">):</span>
+    <span class="n">typer</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">", </span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">!"</span><span class="p">)</span>
+    <span class="n">typer</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">", </span><span class="si">{</span><span class="n">lang</span><span class="si">}</span><span class="s2">!"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">typer</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">typer</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Typer</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">host</span><span class="p">(</span>
+            <span class="n">host</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="s2">"localhost"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Adresse til webserver"</span><span class="p">),</span>
+            <span class="n">lang</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">"no"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Hvilket språk ønsker du?"</span><span class="p">)</span>
+        <span class="p">):</span>
+    <span class="n">typer</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">", </span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">!"</span><span class="p">)</span>
+    <span class="n">typer</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">", </span><span class="si">{</span><span class="n">lang</span><span class="si">}</span><span class="s2">!"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="7.4-Oppgaver:-Bruk-argparse-eller-typer">7.4 Oppgaver: Bruk argparse eller typer<a class="anchor-link" href="#7.4-Oppgaver:-Bruk-argparse-eller-typer">¶</a></h2>
 </div>
 </div>
 </div>
