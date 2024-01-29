@@ -19,7 +19,10 @@ Løsningsforslag ligger i løsningsforslag/
 
 Nyttige script som blir brukt underveis i scriptet ligger i mappa script/
 
-Det finnes ekstraoppgaver under ekstraoppgaver/ 
+Kurset kan klones med git hvis du har git installert 
+git clone git@github.com:Emanon79/python-kurs.git
+Eller lastes ned som zip
+https://codeload.github.com/Emanon79/python-kurs/zip/refs/heads/master
 
 Start med å lese "01 - Introduksjon". Der står det også hva man skal starte med (litt mer detaljert), men for å komme i gang:
 
