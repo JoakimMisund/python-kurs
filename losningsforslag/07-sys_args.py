@@ -5,7 +5,7 @@ def main():
         print("Bruk -c n hvor n er ett tall.")
         print("Bruk -s str hvor str er en string.")
     elif "-c" in sys.argv:
-       print([*range(0,int(sys.argv[2])+1)])
+       print(list(range(0,int(sys.argv[2])+1)))
     elif "-s" in sys.argv:                                # Kjør sum med 0 argumenter
         streng = sys.argv[2]
         print("Lengden på strengen er ", len(streng))

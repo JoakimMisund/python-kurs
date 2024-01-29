@@ -4,6 +4,7 @@ from typing import Optional
 
 def streng_func(s):
     print("Lengden på strengen er ", len(s))
+    print(s[1::2])
     for i in range(1,len(s),2):
         print("Ny streng ", s[i])
 
@@ -13,7 +14,7 @@ def argsparse_example():
     parser.add_argument('-s', type=str,required=False, help='Input en streng')
     args = parser.parse_args()
     if args.c:
-         print([*range(0,int(args.c)+1)])  
+         print(list(range(0,int(args.c)+1)))  
     elif args.s:
         streng_func(args.s)
 
@@ -22,7 +23,7 @@ def typer_example(
           streng: Optional[str] = typer.Option(default=None,help="Input en streng"),
     ):
     if tall is not None:
-        print([*range(0,int(tall)+1)]) 
+        print(list(range(0,int(tall)+1))) 
     if streng is not None:
         streng_func(streng)
 
