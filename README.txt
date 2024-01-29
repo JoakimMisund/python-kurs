@@ -50,9 +50,9 @@ På Linux:
 
 For å bruke Jupyter lab og åpne notebookene (.ipynb-filene):
 - Installer pakker evt. spesifiser de direkte
-  - pip3 install -r requirements.txt
+  - pip install -r requirements.txt
 evt:
-  - pip3 install Flask jupyterlab requests fastapi uvicorn
+  - pip install Flask jupyterlab requests fastapi uvicorn typer
 
 Hvis pip ikke funker (på Windows) bytt ut pip med "py -3 -m pip":
 - py -3 -m pip install -r requirements.txt
