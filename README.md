@@ -1,4 +1,4 @@
-# Pythonkurs READMe
+# Pythonkurs README
 Vi har tidligere kjørt to 2,5-dagers kurs (er derfor vi har en Del 1 og Del 2), men er lite trolig at vi kommer gjennom alt dette
 på en 2,5-dagers økt. De viktigste grunnleggende tingene for å raskt komme i gang med å programmere Python skal iallefall være i Del 1.
 
